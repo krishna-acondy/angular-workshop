@@ -8,9 +8,27 @@ This is the example project for the DPS Belfast Angular workshop. The project st
 │   ├── server.js - the actual API code
 |   └── package.json - dependencies
 ├── scrum-board-app
-│   ├── file21.ext
-│   ├── file22.ext
-│   └── file23.ext
+│   ├── e2e - End to end tests(Protractor/WebDriver)
+│   ├── src
+|   |   ├── app - main application code
+|   |   |   ├── app.module - top-level Angular module
+|   |   |   ├── app.component.ts - The component that is first loaded when the app starts up
+|   |   |   ├── app.component.html - the template for this component
+|   |   |   ├── app.component.scss -styles for this component
+|   |   |   ├── app.component.spec.ts - unit tests
+|   |   ├── assets - static files - fonts, images etc
+|   |   ├── environments - env-specific config values(if necessary)
+|   |   ├── index.html - main page where the SPA is loaded
+|   |   ├── main.ts - bootstrapping point for the app
+|   |   ├── test.ts - bootstrapping point for the test module
+|   |   ├── polyfills.ts - includes all polyfills needed for cross-browser compatibility
+|   |   ├── styles.scss - global application styles
+│   ├── .angular-cli.json - configuration for the Angular CLI project, includes (some) webpack config
+│   ├── karma.conf.js - Karma test runner configuration
+│   ├── protractor.conf.js - configuration for running E2E tests
+│   ├── tsconfig.json - TypeScript configuration
+│   ├── tslint.json - linting rules
+│   └── README.md
 └── README.md - this file
 ```
 
