@@ -13,6 +13,10 @@ export class StoryService {
 
   list(): Observable<Story[]> {
     return this.httpClient.get<Story[]>(this.url)
-      .pipe(map((data: any) => data.stories));
+      .pipe(
+        map(
+          (data: any) => data.stories.map(story => Story.fromJson(story))
+        )
+      );
   }
 }
