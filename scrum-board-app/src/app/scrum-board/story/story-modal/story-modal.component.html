@@ -1,22 +1,35 @@
-<div class="story-modal" *ngIf="data">
-    <h2>Story {{data.id}}</h2>
-    <form class="story-form">
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Title" [value]="data.title">
+<div class='story-modal' *ngIf='data'>
+    <h2 *ngIf='data.id'>Story {{data.id}}</h2>
+    <h2 *ngIf='!data.id'>New Story</h2>
+    <form class='story-form' #storyForm='ngForm'>
+        <mat-form-field class='full-width'>
+            <input matInput
+                placeholder='Title'
+                [(ngModel)]='data.title'
+                name='title'
+                #title='ngModel'>
         </mat-form-field>
-        <mat-form-field class="full-width">
-            <textarea matInput placeholder="Description" [value]="data.description"></textarea>
+        <mat-form-field class='full-width'>
+            <textarea matInput
+                placeholder='Description'
+                [(ngModel)]='data.description'
+                name='description'
+                #description='ngModel'></textarea>
         </mat-form-field>
         <mat-form-field>
-            <mat-select placeholder="Status" [(value)]="data.status">
-                <mat-option *ngFor="let status of statuses" [value]="status">
+            <mat-select
+                placeholder='Status'
+                [(ngModel)]='data.status'
+                name='status'
+                #status='ngModel'>
+                <mat-option *ngFor='let status of statuses' [value]='status'>
                 {{ status }}
                 </mat-option>
             </mat-select>
         </mat-form-field>
     </form>
-    <div class="actions">
-        <button mat-button color="warn" (click)="onCancelClick()">Cancel</button>
-        <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    <div class='actions'>
+        <button mat-button color='warn' (click)='onCancelClick()'>Cancel</button>
+        <button mat-button color='primary' (click)='onSaveClick()'>Save</button>
     </div>
 </div>

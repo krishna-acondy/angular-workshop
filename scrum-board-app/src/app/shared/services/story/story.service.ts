@@ -20,6 +20,13 @@ export class StoryService {
       );
   }
 
+  create(story: Story): Observable<Story> {
+    return this.httpClient.post<Story>(this.url, story)
+      .pipe(
+        map((data: any) => Story.fromJson(data.story))
+      );
+  }
+
   update(story: Story): Observable<Story> {
     return this.httpClient.put<Story>(`${this.url}/${story.id}`, story)
       .pipe(

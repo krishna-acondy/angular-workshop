@@ -14,6 +14,14 @@ export class Story {
   status: Status;
   createdAt: moment.Moment;
 
+  constructor() {
+    this.id = 0;
+    this.title = '';
+    this.description = '';
+    this.status = Status.ToDo;
+    this.createdAt = moment();
+  }
+
   public static fromJson(json: any): Story {
     const story = new Story();
     story.id = json.id;

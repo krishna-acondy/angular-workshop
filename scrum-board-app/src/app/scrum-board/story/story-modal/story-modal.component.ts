@@ -21,7 +21,10 @@ export class StoryModalComponent {
   }
 
   onSaveClick() {
-    this.storyService.update(this.data).subscribe(() => this.dialogRef.close());
+    const request = this.data.id
+      ? this.storyService.update(this.data)
+      : this.storyService.create(this.data);
+    request.subscribe((data) => this.dialogRef.close());
   }
 
 }
