@@ -1,0 +1,18 @@
+<div class='scrum-board'>
+  <div class='swimlane'>
+    <span class='status'>To Do</span>
+    <app-story *ngFor="let story of getStories('To Do')" [story]='story'></app-story>
+  </div>
+  <div class='swimlane'>
+    <span class='status'>In Progress</span>
+    <app-story *ngFor="let story of getStories('In Progress')" [story]='story'></app-story>
+  </div>
+  <div class='swimlane'>
+    <span class='status'>Flagged</span>
+    <app-story *ngFor="let story of getStories('Flagged')" [story]='story'></app-story>
+  </div>
+  <div class='swimlane'>
+    <span class='status'>Done</span>
+    <app-story *ngFor="let story of getStories('Done')" [story]='story'></app-story>
+  </div>
+</div>

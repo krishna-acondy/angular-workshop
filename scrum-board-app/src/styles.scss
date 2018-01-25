@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@font-face {
+  font-family: 'roboto-light';
+  src: url('/assets/roboto-light.ttf');
+}
+
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('/assets/roboto-regular.ttf');
+}
+
+* {
+  font-family: 'roboto-regular';
+}

@@ -1,0 +1,21 @@
+.story {
+  margin: 1%;
+  color: #ffffff;
+
+  &.to-do {
+      background-color: #fde828;
+      color: #000000;
+  }
+
+  &.in-progress {
+      background-color: #288ffd;
+  }
+
+  &.done {
+      background-color: #1b5f1f;
+  }
+
+  &.flagged {
+      background-color: #d31010;
+  }
+}

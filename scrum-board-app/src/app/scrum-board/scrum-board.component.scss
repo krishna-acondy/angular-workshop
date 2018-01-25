@@ -1,0 +1,20 @@
+.scrum-board {
+  display: flex;
+  flex-direction: row;
+
+  .swimlane {
+      flex-grow: 0;
+      flex-basis: 25%;
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #d9d9d9;
+
+      .status {
+          display: block;
+          width: 100%;
+          padding: 5px;
+          text-align: center;
+      }
+  }
+}

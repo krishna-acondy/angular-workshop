@@ -1,0 +1,5 @@
+<mat-card class='story' *ngIf='story' [ngClass]='toKebabCase(story.status)' (click)='openModal(story)'>
+  <mat-card-title>{{story.id}}</mat-card-title>
+  <mat-card-subtitle>{{story.title}}</mat-card-subtitle>
+  <mat-card-content>{{story.description}}</mat-card-content>
+</mat-card>
