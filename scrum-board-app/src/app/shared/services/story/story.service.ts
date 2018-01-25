@@ -19,4 +19,11 @@ export class StoryService {
         )
       );
   }
+
+  update(story: Story): Observable<Story> {
+    return this.httpClient.put<Story>(`${this.url}/${story.id}`, story)
+      .pipe(
+        map((data: any) => Story.fromJson(data.story))
+      );
+  }
 }

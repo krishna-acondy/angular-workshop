@@ -1,0 +1,13 @@
+.story-modal {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+
+    .full-width {
+        width: 100%;
+    }
+
+    .actions {
+        align-self: flex-end;
+    }
+}
