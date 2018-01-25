@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoryService } from './services/story/story.service';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private storyService: StoryService) {
+    this.storyService.list().subscribe(stories => console.table(stories));
+  }
 }
