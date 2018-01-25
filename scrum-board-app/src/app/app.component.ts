@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StoryService } from './services/story/story.service';
+import { StoryService } from './shared/services/story/story.service';
 
 @Component({
   selector: 'app-root',

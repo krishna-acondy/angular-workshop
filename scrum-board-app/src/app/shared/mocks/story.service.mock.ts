@@ -1,4 +1,4 @@
-import { Story } from '../../models/story';
+import { Story } from '../models/story';
 import { of } from 'rxjs/observable/of';
 
 const story = Story.fromJson({

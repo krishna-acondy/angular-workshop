@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { StoryService } from './services/story/story.service';
+import { StoryService } from './shared/services/story/story.service';
 
 
 @NgModule({

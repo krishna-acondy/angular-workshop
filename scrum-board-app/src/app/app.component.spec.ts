@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { StoryService } from './services/story/story.service';
+import { StoryService } from './shared/services/story/story.service';
 import { StoryServiceMock } from './shared/mocks/story.service.mock';
 
 describe('AppComponent', () => {
