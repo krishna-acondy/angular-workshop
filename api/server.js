@@ -25,6 +25,13 @@ router.get('/stories', function(req, res) {
     res.json({ stories });
 });
 
+router.post('/stories', function(req, res) {
+    const story = req.body;
+    story.id = stories.length + 1;
+    stories.push(story);
+    res.json({ story })
+});
+
 router.get('/stories/:id', function(req, res) {
     res.json({ story: stories.find((s) => s.id === parseInt(req.params.id))});
 });
