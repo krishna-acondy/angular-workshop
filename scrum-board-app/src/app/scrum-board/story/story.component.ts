@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
 import { Story } from '../../shared/models/story';
@@ -13,6 +13,9 @@ export class StoryComponent implements OnInit {
   @Input()
   story: Story;
 
+  @Output()
+  storyUpdated = new EventEmitter();
+
   constructor(private matDialog: MatDialog) { }
 
   ngOnInit() {
@@ -22,7 +25,13 @@ export class StoryComponent implements OnInit {
     return value.toLocaleLowerCase().replace(/ /g, '-');
   }
 
+  emitEvent = () => {
+    this.storyUpdated.emit();
+  }
+
   openModal(story) {
-    this.matDialog.open(StoryModalComponent, { data: story });
+    const clone = new Story();
+    Object.assign(clone, story);
+    this.matDialog.open(StoryModalComponent, { data: { story: clone, callback: this.emitEvent } });
   }
 }

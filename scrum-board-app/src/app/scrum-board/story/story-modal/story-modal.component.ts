@@ -21,10 +21,13 @@ export class StoryModalComponent {
   }
 
   onSaveClick() {
-    const request = this.data.id
-      ? this.storyService.update(this.data)
-      : this.storyService.create(this.data);
-    request.subscribe((data) => this.dialogRef.close());
+    const request = this.data.story.id
+      ? this.storyService.update(this.data.story)
+      : this.storyService.create(this.data.story);
+    request.subscribe((data) => {
+      this.data.callback();
+      this.dialogRef.close();
+    });
   }
 
 }

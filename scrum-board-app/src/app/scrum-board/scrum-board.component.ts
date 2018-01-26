@@ -16,15 +16,19 @@ export class ScrumBoardComponent implements OnInit {
   constructor(private storyService: StoryService, private matDialog: MatDialog) { }
 
   ngOnInit() {
-    this.storyService.list().subscribe(stories => this.stories = stories);
+    this.getStories();
   }
 
-  getStories(status: string): Story[] {
+  getStoriesByStatus(status: string): Story[] {
     return this.stories.filter(story => story.status === status);
   }
 
+  getStories = () => {
+    this.storyService.list().subscribe(stories => this.stories = stories);
+  }
+
   createStory() {
-    this.matDialog.open(StoryModalComponent, { data: new Story()});
+    this.matDialog.open(StoryModalComponent, { data: { story: new Story(), callback: this.getStories }});
   }
 
 }

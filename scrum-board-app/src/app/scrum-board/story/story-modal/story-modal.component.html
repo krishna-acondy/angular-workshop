@@ -1,25 +1,25 @@
-<div class='story-modal' *ngIf='data'>
-    <h2 *ngIf='data.id'>Story {{data.id}}</h2>
-    <h2 *ngIf='!data.id'>New Story</h2>
+<div class='story-modal' *ngIf='data.story'>
+    <h2 *ngIf='data.story.id'>Story {{data.story.id}}</h2>
+    <h2 *ngIf='!data.story.id'>New Story</h2>
     <form class='story-form' #storyForm='ngForm'>
         <mat-form-field class='full-width'>
             <input matInput
                 placeholder='Title'
-                [(ngModel)]='data.title'
+                [(ngModel)]='data.story.title'
                 name='title'
                 #title='ngModel'>
         </mat-form-field>
         <mat-form-field class='full-width'>
             <textarea matInput
                 placeholder='Description'
-                [(ngModel)]='data.description'
+                [(ngModel)]='data.story.description'
                 name='description'
                 #description='ngModel'></textarea>
         </mat-form-field>
         <mat-form-field>
             <mat-select
                 placeholder='Status'
-                [(ngModel)]='data.status'
+                [(ngModel)]='data.story.status'
                 name='status'
                 #status='ngModel'>
                 <mat-option *ngFor='let status of statuses' [value]='status'>
